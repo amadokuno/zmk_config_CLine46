@@ -1,0 +1,6 @@
+build:
+  config:
+    - board: seeeduino_xiao_ble
+      shield: CLine46_L rgbled_adapter
+    - board: seeeduino_xiao_ble
+      shield: CLine46_R rgbled_adapter
