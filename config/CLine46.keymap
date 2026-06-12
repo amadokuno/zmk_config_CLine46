@@ -169,7 +169,7 @@
         MOUSE {
             bindings = <
 &trans  &kp NUMBER_1                &kp NUMBER_2     &kp NUMBER_3      &kp NUMBER_4     &kp NUMBER_5                    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
-&trans  &kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5   &kp KP_NUMBER_6  &trans                          &trans        &mkp MB1      &mkp MB2      &trans        &trans        &trans
+&trans  &trans                      &kp KP_NUMBER_4  &kp KP_NUMBER_5   &kp KP_NUMBER_6  &trans                          &trans        &mkp MB1      &mkp MB2      &trans        &trans        &trans
 &trans  &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2   &kp KP_NUMBER_3  &kp PERIOD                      &trans        &trans        &trans        &trans        &trans        &trans
         &connect_mac                &connect_ipad    &connect_android  &bt BT_SEL 3     &trans        &trans    &trans  &trans                                    &trans        &trans
             >;
