@@ -59,9 +59,10 @@
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
 
-        /* ウチがここに追加したよ！ */
-        automouse-sleep-ms = <600000>; // 10分間操作がないまでスリープさせない
-        wakeup-source;                // トラックボールの動きでシステムを復帰
+        /* ドライバの仕様に合わせて修正した省電力設定 */
+        smart-sleep;
+        sleep-ms = <600000>; // 10分間（600000ms）操作がないまでスリープさせない
+        wakeup-source;       // トラックボールの動きでシステムを復帰
     };
 };
 
