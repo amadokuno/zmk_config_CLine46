@@ -59,8 +59,7 @@
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
 
-        /* ドライバの仕様に合わせて修正した省電力設定 */
-        smart-sleep;
+        /* 未定義だった smart-sleep を削除し、有効なプロパティだけに絞ったよ */
         sleep-ms = <600000>; // 10分間（600000ms）操作がないまでスリープさせない
         wakeup-source;       // トラックボールの動きでシステムを復帰
     };
