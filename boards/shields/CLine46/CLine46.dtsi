@@ -95,7 +95,7 @@
         interrupt-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 
-    /* 修正箇所1: リスナーを有効化し、トラックボールの入力を受け付ける */
+    /* トラックボールの入力をシステムに引き渡すリスナー（有効化） */
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "okay";
@@ -116,9 +116,13 @@
     status = "okay";
 };
 
-/* 修正箇所2: SPI0とトラックボールセンサーの有効化＆スリープ設定 */
+/* SPI0とトラックボールセンサーの設定（エラー対策を追加） */
 &spi0 {
     status = "okay";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&xiao_d 0 GPIO_ACTIVE_LOW>; /* チップセレクトピン（仮でD0） */
 
     trackball: trackball@0 {
         status = "okay";
@@ -126,11 +130,11 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         
-        /* 割り込みピンの設定（基板の配線に合わせてピン番号を確認してね） */
-        irq-gpios = <&xiao_d 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        /* 割り込みピン（仮でD1を指定。配線に合わせて調整してね） */
+        irq-gpios = <&xiao_d 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-        /* 省電力＆復帰の遅さを解消する設定 */
-        automouse-sleep-ms = <600000>; // 10分間（600000ms）操作がないまでスリープさせない
-        wakeup-source;                // トラックボールの動きでシステムを復帰させる
+        /* 10分間（600000ms）操作がないまで自動スリープさせない */
+        automouse-sleep-ms = <600000>; 
+        wakeup-source;                
     };
 };
