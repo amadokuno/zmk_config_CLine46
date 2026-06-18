@@ -95,6 +95,42 @@
         interrupt-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball>;
+    };
+
+    vbatt: vbatt {
+        status = "disabled";
+    };
+    
+    non_lipo_battery: non_lipo_battery {
+        compatible = "zmk,non-lipo-battery";
+        io-channels = <&adc 0>;  
+    };
+};
+
+&adc {
+    status = "okay";
+};                    RC(4,3) RC(5,3) RC(0,4) RC(1,4) RC(2,4) RC(3,4)  RC(4,9) RC(5,9)                                 RC(0,10) RC(1,10)  
+        >;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-charlieplex";
+        gpios
+        = <&xiao_d 2 (GPIO_ACTIVE_HIGH)>
+        , <&xiao_d 3 (GPIO_ACTIVE_HIGH)>
+        , <&xiao_d 4 (GPIO_ACTIVE_HIGH)>
+        , <&xiao_d 5 (GPIO_ACTIVE_HIGH)>
+        , <&xiao_d 6 (GPIO_ACTIVE_HIGH)>
+        , <&xiao_d 7 (GPIO_ACTIVE_HIGH)>
+        ;
+        wakeup-source;
+        interrupt-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+    };
+
     /* トラックボールの入力をシステムに引き渡すリスナー（有効化） */
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
