@@ -132,10 +132,10 @@
 
         Android_Ctrl {
             bindings = <
-&trans  &trans    &trans          &kp END     &trans     &kp LG(LS(S))                     &trans          &kp LA(TAB)         &kp LG(TAB)    &kp LA(RS(UP_ARROW))    &kp UP_ARROW  &trans
-&trans  &kp HOME  &msc SCRL_UP    &kp DELETE  &kp RIGHT  &kp LG(TAB)                       &kp BACKSPACE   &kp F6              &kp F7         &kp F9                  &kp LC(O)     &trans
-&trans  &trans    &msc SCRL_DOWN  &trans      &trans     &kp LEFT_ARROW                    &kp DOWN_ARROW  &kp LA(LEFT_ARROW)  &kp LA(RIGHT)  &kp LS(LA(DOWN_ARROW))  &trans        &trans
-        &trans    &trans          &trans      &trans     &trans          &trans    &trans  &trans                                             &trans                  &trans
+&trans  &trans    &trans          &kp END     &trans     &kp LG(LS(S))                      &trans          &kp LA(TAB)         &kp LG(TAB)    &kp LA(RS(UP_ARROW))    &kp UP_ARROW  &trans
+&trans  &kp HOME  &msc SCRL_UP    &kp DELETE  &kp RIGHT  &kp LG(TAB)                        &kp BACKSPACE   &kp F6              &kp F7         &kp F9                  &kp LC(O)     &trans
+&trans  &trans    &msc SCRL_DOWN  &trans      &trans     &kp LEFT_ARROW                     &kp DOWN_ARROW  &kp LA(LEFT_ARROW)  &kp LA(RIGHT)  &kp LS(LA(DOWN_ARROW))  &trans        &trans
+        &trans    &trans          &trans      &trans     &trans          &trans    &kp DEL  &trans                                             &trans                  &trans
             >;
         };
 
