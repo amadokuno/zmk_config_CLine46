@@ -60,7 +60,7 @@
         new_macro: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp O &kp R &kp A &kp O &kp R &kp A &kp O &kp R &kp A &kp O &kp R &kp A &kp NUMBER_4 &kp ENTER>;
+            bindings = <&kp N &kp A &kp Z &kp U &kp Y &kp O &kp R &kp U &kp H &kp A &kp N &kp E &kp K &kp O &kp ENTER>;
             label = "NEW_MACRO";
         };
 
@@ -159,10 +159,10 @@
 
         MOUSE {
             bindings = <
-&bt BT_CLR  &kp NUMBER_1                &kp NUMBER_2     &kp NUMBER_3      &kp NUMBER_4     &kp NUMBER_5                    &kp NUMBER_6   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
-&trans      &trans                      &kp KP_NUMBER_4  &kp KP_NUMBER_5   &kp KP_NUMBER_6  &trans                          &kp BACKSPACE  &mkp MB1      &mkp MB2      &trans        &trans        &trans
-&trans      &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2   &kp KP_NUMBER_3  &kp PERIOD                      &trans         &trans        &trans        &trans        &trans        &trans
-            &connect_mac                &connect_ipad    &connect_android  &bt BT_SEL 3     &trans        &trans    &trans  &trans                                     &trans        &trans
+&bt BT_CLR  &kp LA(LC(NUMBER_1))        &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &kp LA(LC(NUMBER_5))                    &kp LA(LC(NUMBER_6))  &kp LA(LC(NUMBER_7))  &kp LA(LC(NUMBER_8))  &kp LA(LC(NUMBER_9))  &kp LA(LC(NUMBER_0))  &trans
+&trans      &trans                      &kp KP_NUMBER_4       &kp KP_NUMBER_5       &kp KP_NUMBER_6       &trans                                  &kp BACKSPACE         &mkp MB1              &mkp MB2              &trans                &trans                &trans
+&trans      &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1       &kp KP_NUMBER_2       &kp KP_NUMBER_3       &kp PERIOD                              &trans                &trans                &trans                &trans                &trans                &trans
+            &connect_mac                &connect_ipad         &connect_android      &bt BT_SEL 3          &trans                &trans    &trans  &trans                                                            &trans                &trans
             >;
         };
     };
