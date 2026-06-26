@@ -9,161 +9,402 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
 &mt {
-    flavor = "balanced";
-    quick-tap-ms = <0>;
+       
+
+    flavor = "balanced";
+
+       
+
+    quick-tap-ms = <0>;
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
+       
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
-        };
+    combos {
+               
 
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
+        compatible = "zmk,combos";
 
-        kakko1 {
-            bindings = <&kp LA(NUMBER_9)>;
-            key-positions = <37 9>;
-        };
+               
 
-        kakko2 {
-            bindings = <&kp LA(NUMBER_0)>;
-            key-positions = <37 10>;
-        };
-    };
+        tab {
+                       
 
-    behaviors {
-        ROTATE: ROTATE {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            label = "ROTATE";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
+            bindings = <&kp TAB>;
 
-            tap-ms = <20>;
-        };
-    };
+                       
 
-    macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
-        };
+            key-positions = <11 12>;
 
-        new_macro: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N &kp A &kp Z &kp U &kp Y &kp O &kp R &kp U &kp H &kp A &kp N &kp E &kp K &kp O &kp ENTER>;
-            label = "NEW_MACRO";
-        };
+                   
+        };
 
-        Mac_zoomin: zoom {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt LEFT_GUI &msc SCRL_DOWN &kt LEFT_GUI>;
-            label = "ZOOM";
-        };
+               
 
-        Mac_zoomout: Mac_zoomout {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &msc SCRL_UP &kt LEFT_GUI>;
-            label = "MAC_ZOOMOUT";
-        };
+        shift_tab {
+                       
 
-        connect_mac: connect_mac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 0>;
-            label = "CONNECT_MAC";
-        };
+            bindings = <&kp LS(TAB)>;
 
-        connect_ipad: connect_ipad {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 1>;
-            label = "CONNECT_IPAD";
-        };
+                       
 
-        connect_android: connect_android {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 2 &bt BT_SEL 2>;
-            label = "CONNECT_ANDROID";
-        };
-    };
+            key-positions = <12 13>;
 
-    keymap {
-        compatible = "zmk,keymap";
+                   
+        };
 
-        MAC {
-            bindings = <
-&kp TAB    &kp Q      &kp W         &kp E     &kp R  &kp T                        &kp Y      &kp U  &kp I      &kp O                      &kp P                    &kp MINUS
-&mo 1      &kp A      &kp S         &kp D     &kp F  &kp G                        &kp H      &kp J  &kp K      &kp L                      &kp SEMICOLON            &lt 6 ENTER
-&kp LSHFT  &kp Z      &kp X         &kp C     &kp V  &kp B                        &kp N      &kp M  &kp COMMA  &kp DOT                    &kp FSLH                 &kp RSHFT
-           &kp LCTRL  &kp LEFT_ALT  &kp LCMD  &mo 5  &mkp MB1  &kp CAPS    &mo 5  &kp SPACE                    &mt LEFT_GUI LEFT_BRACKET  &mt RCTRL RIGHT_BRACKET
-            >;
-        };
+               
 
-        MAC_CTRL {
-            bindings = <
-&trans  &trans     &trans          &kp LC(E)   &trans     &kp LG(LS(NUMBER_4))                               &kp LC(NUMBER_1)  &kp LC(NUMBER_2)    &kp LC(NUMBER_3)  &kp LS(LC(UP_ARROW))  &kp UP_ARROW       &kp LG(LS(NUMBER_5))
-&trans  &kp LC(A)  &msc SCRL_UP    &kp DELETE  &kp RIGHT  &kp LC(UP_ARROW)                                   &kp BACKSPACE     &kp LC(J)           &kp LC(K)         &kp LC(L)             &kp LC(SEMICOLON)  &trans
-&trans  &trans     &msc SCRL_DOWN  &trans      &trans     &kp LEFT_ARROW                                     &kp DOWN_ARROW    &kp LG(LEFT_ARROW)  &kp LG(RIGHT)     &kp LS(LC(DOWN))      &trans             &trans
-        &trans     &trans          &trans      &trans     &trans                &trans    &kp LG(BACKSPACE)  &trans                                                  &trans                &trans
-            >;
-        };
+        kakko1 {
+                       
 
-        Android {
-            bindings = <
-&kp TAB    &kp Q         &kp W         &kp E      &kp R  &kp T                            &kp Y      &kp U  &kp I      &kp O           &kp P               &kp MINUS
-&mo 3      &kp A         &kp S         &kp D      &kp F  &kp G                            &kp H      &kp J  &kp K      &kp L           &kp SEMI            &lt 6 ENTER
-&kp LSHFT  &kp Z         &kp X         &kp C      &kp V  &kp B                            &kp N      &kp M  &kp COMMA  &kp DOT         &kp FSLH            &kp RSHFT
-           &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &mo 5  &mkp MB1  &kp CAPSLOCK    &mo 5  &kp SPACE                    &mt RCTRL LBKT  &mt RIGHT_GUI RBKT
-            >;
-        };
+            bindings = <&kp LA(NUMBER_9)>;
 
-        Android_Ctrl {
-            bindings = <
-&trans  &trans    &trans          &kp END     &trans     &kp LG(LS(S))                      &trans          &kp LA(TAB)         &kp LG(TAB)    &kp LA(RS(UP_ARROW))    &kp UP_ARROW  &trans
-&trans  &kp HOME  &msc SCRL_UP    &kp DELETE  &kp RIGHT  &kp LG(TAB)                        &kp BACKSPACE   &kp F6              &kp F7         &kp F9                  &kp LC(O)     &trans
-&trans  &trans    &msc SCRL_DOWN  &trans      &trans     &kp LEFT_ARROW                     &kp DOWN_ARROW  &kp LA(LEFT_ARROW)  &kp LA(RIGHT)  &kp LS(LA(DOWN_ARROW))  &trans        &trans
-        &trans    &trans          &trans      &trans     &trans          &trans    &kp DEL  &trans                                             &trans                  &trans
-            >;
-        };
+                       
 
-        MOUSE_LAYER {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                  &trans  &trans
-            >;
-        };
+            key-positions = <37 9>;
 
-        SCROLL {
-            bindings = <
-&kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                            &kp NUMBER_6    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0   &kp ESCAPE
-&trans     &trans        &trans        &trans        &trans        &trans                                  &new_macro      &trans        &trans        &kp EQUAL     &kp BACKSLASH  &kp SINGLE_QUOTE
-&trans     &trans        &trans        &trans        &kp C_PREV    &kp C_NEXT                              &trans          &trans        &trans        &trans        &trans         &trans
-           &trans        &trans        &trans        &trans        &trans        &trans    &kp LANGUAGE_1  &kp LANGUAGE_2                              &trans        &trans
-            >;
-        };
+                   
+        };
 
-        MOUSE {
-            bindings = <
-&bt BT_CLR  &kp LA(LC(NUMBER_1))        &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &kp LA(LC(NUMBER_5))                    &kp LA(LC(NUMBER_6))  &kp LA(LC(NUMBER_7))  &kp LA(LC(NUMBER_8))  &kp LA(LC(NUMBER_9))  &kp LA(LC(NUMBER_0))  &trans
-&trans      &trans                      &kp KP_NUMBER_4       &kp KP_NUMBER_5       &kp KP_NUMBER_6       &trans                                  &kp BACKSPACE         &mkp MB1              &mkp MB2              &trans                &trans                &trans
-&trans      &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1       &kp KP_NUMBER_2       &kp KP_NUMBER_3       &kp PERIOD                              &trans                &trans                &trans                &trans                &trans                &trans
-            &connect_mac                &connect_ipad         &connect_android      &bt BT_SEL 3          &trans                &trans    &trans  &trans                                                            &trans                &trans
-            >;
-        };
-    };
+               
+
+        kakko2 {
+                       
+
+            bindings = <&kp LA(NUMBER_0)>;
+
+                       
+
+            key-positions = <37 10>;
+
+                   
+        };
+
+           
+    };
+
+       
+
+    behaviors {
+               
+
+        ROTATE: ROTATE {
+                       
+
+            compatible = "zmk,behavior-sensor-rotate-var";
+
+                       
+
+            label = "ROTATE";
+
+                        #
+
+            sensor-binding-cells = <2>;
+
+                       
+
+            bindings = <&msc>, <&msc>;
+
+                       
+
+            tap-ms = <20>;
+
+                   
+        };
+
+           
+    };
+
+       
+
+    macros {
+               
+
+        to_layer_0: to_layer_0 {
+                       
+
+            compatible = "zmk,behavior-macro-one-param";
+
+                        #
+
+            binding-cells = <1>;
+
+                       
+
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+
+                       
+
+            label = "TO_LAYER_0";
+
+                   
+        };
+
+               
+
+        new_macro: new_macro {
+                       
+
+            compatible = "zmk,behavior-macro";
+
+                        #
+
+            binding-cells = <0>;
+
+                       
+
+            bindings = <&kp N &kp A &kp Z &kp U &kp Y &kp O &kp R &kp U &kp H &kp A &kp N &kp E &kp K &kp O &kp ENTER>;
+
+                       
+
+            label = "NEW_MACRO";
+
+                   
+        };
+
+               
+
+        Mac_zoomin: zoom {
+                       
+
+            compatible = "zmk,behavior-macro";
+
+                        #
+
+            binding-cells = <0>;
+
+                       
+
+            bindings = <&kt LEFT_GUI &msc SCRL_DOWN &kt LEFT_GUI>;
+
+                       
+
+            label = "ZOOM";
+
+                   
+        };
+
+               
+
+        Mac_zoomout: Mac_zoomout {
+                       
+
+            compatible = "zmk,behavior-macro";
+
+                        #
+
+            binding-cells = <0>;
+
+                       
+
+            bindings = <&kp LEFT_GUI &msc SCRL_UP &kt LEFT_GUI>;
+
+                       
+
+            label = "MAC_ZOOMOUT";
+
+                   
+        };
+
+               
+
+        connect_mac: connect_mac {
+                       
+
+            compatible = "zmk,behavior-macro";
+
+                        #
+
+            binding-cells = <0>;
+
+                       
+
+            bindings = <&to 0 &bt BT_SEL 0>;
+
+                       
+
+            label = "CONNECT_MAC";
+
+                   
+        };
+
+               
+
+        connect_ipad: connect_ipad {
+                       
+
+            compatible = "zmk,behavior-macro";
+
+                        #
+
+            binding-cells = <0>;
+
+                       
+
+            bindings = <&to 0 &bt BT_SEL 1>;
+
+                       
+
+            label = "CONNECT_IPAD";
+
+                   
+        };
+
+               
+
+        connect_android: connect_android {
+                       
+
+            compatible = "zmk,behavior-macro";
+
+                        #
+
+            binding-cells = <0>;
+
+                       
+
+            bindings = <&to 2 &bt BT_SEL 2>;
+
+                       
+
+            label = "CONNECT_ANDROID";
+
+                   
+        };
+
+        connect_windows: connect_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3 &to 2>;
+            label = "CONNECT_WINDOWS";
+        };
+
+           
+    };
+
+       
+
+    keymap {
+               
+
+        compatible = "zmk,keymap";
+
+               
+
+        MAC {
+                       
+
+            bindings = <
+&kp TAB    &kp Q      &kp W         &kp E     &kp R  &kp T                        &kp Y      &kp U  &kp I      &kp O                      &kp P                    &kp MINUS
+&mo 1      &kp A      &kp S         &kp D     &kp F  &kp G                        &kp H      &kp J  &kp K      &kp L                      &kp SEMICOLON            &lt 6 ENTER
+&kp LSHFT  &kp Z      &kp X         &kp C     &kp V  &kp B                        &kp N      &kp M  &kp COMMA  &kp DOT                    &kp FSLH                 &kp RSHFT
+           &kp LCTRL  &kp LEFT_ALT  &kp LCMD  &mo 5  &mkp MB1  &kp CAPS    &mo 5  &kp SPACE                    &mt LEFT_GUI LEFT_BRACKET  &mt RCTRL RIGHT_BRACKET
+            >;
+
+                   
+        };
+
+               
+
+        MAC_CTRL {
+                       
+
+            bindings = <
+&trans  &trans     &trans          &kp LC(E)   &trans     &kp LG(LS(NUMBER_4))                               &kp LC(NUMBER_1)  &kp LC(NUMBER_2)    &kp LC(NUMBER_3)  &kp LS(LC(UP_ARROW))  &kp UP_ARROW       &kp LG(LS(NUMBER_5))
+&trans  &kp LC(A)  &msc SCRL_UP    &kp DELETE  &kp RIGHT  &kp LC(UP_ARROW)                                   &kp BACKSPACE     &kp LC(J)           &kp LC(K)         &kp LC(L)             &kp LC(SEMICOLON)  &trans
+&trans  &trans     &msc SCRL_DOWN  &trans      &trans     &kp LEFT_ARROW                                     &kp DOWN_ARROW    &kp LG(LEFT_ARROW)  &kp LG(RIGHT)     &kp LS(LC(DOWN))      &trans             &trans
+        &trans     &trans          &trans      &trans     &trans                &trans    &kp LG(BACKSPACE)  &trans                                                  &trans                &trans
+            >;
+
+                   
+        };
+
+               
+
+        Android {
+                       
+
+            bindings = <
+&kp TAB    &kp Q         &kp W         &kp E      &kp R  &kp T                            &kp Y      &kp U  &kp I      &kp O           &kp P               &kp MINUS
+&mo 3      &kp A         &kp S         &kp D      &kp F  &kp G                            &kp H      &kp J  &kp K      &kp L           &kp SEMI            &lt 6 ENTER
+&kp LSHFT  &kp Z         &kp X         &kp C      &kp V  &kp B                            &kp N      &kp M  &kp COMMA  &kp DOT         &kp FSLH            &kp RSHFT
+           &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &mo 5  &mkp MB1  &kp CAPSLOCK    &mo 5  &kp SPACE                    &mt RCTRL LBKT  &mt RIGHT_GUI RBKT
+            >;
+
+                   
+        };
+
+               
+
+        Android_Ctrl {
+                       
+
+            bindings = <
+&trans  &trans    &trans          &kp END     &trans     &kp LG(LS(S))                      &trans          &kp LA(TAB)         &kp LG(TAB)    &kp LA(RS(UP_ARROW))    &kp UP_ARROW  &trans
+&trans  &kp HOME  &msc SCRL_UP    &kp DELETE  &kp RIGHT  &kp LG(TAB)                        &kp BACKSPACE   &kp F6              &kp F7         &kp F9                  &kp LC(O)     &trans
+&trans  &trans    &msc SCRL_DOWN  &trans      &trans     &kp LEFT_ARROW                     &kp DOWN_ARROW  &kp LA(LEFT_ARROW)  &kp LA(RIGHT)  &kp LS(LA(DOWN_ARROW))  &trans        &trans
+        &trans    &trans          &trans      &trans     &trans          &trans    &kp DEL  &trans                                             &trans                  &trans
+            >;
+
+                   
+        };
+
+               
+
+        MOUSE_LAYER {
+                       
+
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                  &trans  &trans
+            >;
+
+                   
+        };
+
+               
+
+        SCROLL {
+                       
+
+            bindings = <
+&kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                            &kp NUMBER_6    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0   &kp ESCAPE
+&trans     &trans        &trans        &trans        &trans        &trans                                  &new_macro      &trans        &trans        &kp EQUAL     &kp BACKSLASH  &kp SINGLE_QUOTE
+&trans     &trans        &trans        &trans        &kp C_PREV    &kp C_NEXT                              &trans          &trans        &trans        &trans        &trans         &trans
+           &trans        &trans        &trans        &trans        &trans        &trans    &kp LANGUAGE_1  &kp LANGUAGE_2                              &trans        &trans
+            >;
+
+                   
+        };
+
+               
+
+        MOUSE {
+                       
+
+            bindings = <
+&bt BT_CLR  &kp LA(LC(NUMBER_1))        &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &kp LA(LC(NUMBER_5))                    &kp LA(LC(NUMBER_6))  &kp LA(LC(NUMBER_7))  &kp LA(LC(NUMBER_8))  &kp LA(LC(NUMBER_9))  &kp LA(LC(NUMBER_0))  &trans
+&trans      &trans                      &kp KP_NUMBER_4       &kp KP_NUMBER_5       &kp KP_NUMBER_6       &trans                                  &kp BACKSPACE         &mkp MB1              &mkp MB2              &trans                &trans                &trans
+&trans      &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1       &kp KP_NUMBER_2       &kp KP_NUMBER_3       &kp PERIOD                              &trans                &trans                &trans                &trans                &trans                &trans
+            &connect_mac                &connect_ipad         &connect_android      &bt BT_SEL 3          &trans                &trans    &trans  &trans                                                            &trans                &trans
+            >;
+
+                   
+        };
+
+        layer_7 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                  &trans  &trans
+            >;
+        };
+
+           
+    };
 };
