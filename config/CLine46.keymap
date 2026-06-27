@@ -149,8 +149,8 @@
         SCROLL {
             bindings = <
 &kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                            &kp NUMBER_6    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0   &kp ESCAPE
-&trans     &trans        &trans        &trans        &trans        &trans                                  &new_macro      &trans        &trans        &kp EQUAL     &kp BACKSLASH  &kp SINGLE_QUOTE
-&trans     &trans        &trans        &trans        &kp C_PREV    &kp C_NEXT                              &trans          &trans        &trans        &trans        &trans         &trans
+&trans     &trans        &trans        &trans        &trans        &trans                                  &new_macro      &trans        &trans        &trans        &kp EQUAL      &kp SINGLE_QUOTE
+&trans     &trans        &trans        &trans        &kp C_PREV    &kp C_NEXT                              &trans          &trans        &trans        &trans        &kp BACKSLASH  &trans
            &trans        &trans        &trans        &trans        &trans        &trans    &kp LANGUAGE_1  &kp LANGUAGE_2                              &trans        &trans
             >;
         };
@@ -161,15 +161,6 @@
 &trans      &trans                      &kp KP_NUMBER_4       &kp KP_NUMBER_5       &kp KP_NUMBER_6       &trans                                  &kp BACKSPACE         &mkp MB1              &mkp MB2              &trans                &trans                &trans
 &trans      &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1       &kp KP_NUMBER_2       &kp KP_NUMBER_3       &kp PERIOD                              &trans                &trans                &trans                &trans                &trans                &trans
             &connect_mac                &connect_ipad         &connect_android      &connect_windows      &trans                &trans    &trans  &trans                                                            &trans                &trans
-            >;
-        };
-
-        layer_7 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                  &trans  &trans
             >;
         };
     };
