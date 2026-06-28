@@ -52,7 +52,7 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&to 2 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
         };
 
         new_macro: new_macro {
@@ -76,53 +76,35 @@
         connect_mac: connect_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 0>;
+            bindings = <&to 2 &bt BT_SEL 0>;
         };
 
         connect_ipad: connect_ipad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 1>;
+            bindings = <&to 2 &bt BT_SEL 1>;
         };
 
         connect_android: connect_android {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 2 &bt BT_SEL 2>;
+            bindings = <&to 0 &bt BT_SEL 2>;
         };
 
         connect_windows: connect_windows {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3 &to 2>;
+            bindings = <&bt BT_SEL 3 &to 0>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        MAC {
-            bindings = <
-&kp TAB    &kp Q      &kp W         &kp E     &kp R  &kp T                        &kp Y      &kp U  &kp I      &kp O                      &kp P                    &kp MINUS
-&mo 1      &kp A      &kp S         &kp D     &kp F  &kp G                        &kp H      &kp J  &kp K      &kp L                      &kp SEMICOLON            &lt 6 ENTER
-&kp LSHFT  &kp Z      &kp X         &kp C     &kp V  &kp B                        &kp N      &kp M  &kp COMMA  &kp DOT                    &kp FSLH                 &kp RSHFT
-           &kp LCTRL  &kp LEFT_ALT  &kp LCMD  &mo 5  &mkp MB1  &kp CAPS    &mo 5  &kp SPACE                    &mt LEFT_GUI LEFT_BRACKET  &mt RCTRL RIGHT_BRACKET
-            >;
-        };
-
-        MAC_CTRL {
-            bindings = <
-&trans  &trans     &trans          &kp LC(E)   &trans     &kp LG(LS(NUMBER_4))                               &kp LC(NUMBER_1)  &kp LC(NUMBER_2)    &kp LC(NUMBER_3)  &kp LS(LC(UP_ARROW))  &kp UP_ARROW       &kp LG(LS(NUMBER_5))
-&trans  &kp LC(A)  &msc SCRL_UP    &kp DELETE  &kp RIGHT  &kp LC(UP_ARROW)                                   &kp BACKSPACE     &kp LC(J)           &kp LC(K)         &kp LC(L)             &kp LC(SEMICOLON)  &trans
-&trans  &trans     &msc SCRL_DOWN  &trans      &trans     &kp LEFT_ARROW                                     &kp DOWN_ARROW    &kp LG(LEFT_ARROW)  &kp LG(RIGHT)     &kp LS(LC(DOWN))      &trans             &trans
-        &trans     &trans          &trans      &trans     &trans                &trans    &kp LG(BACKSPACE)  &trans                                                  &trans                &trans
-            >;
-        };
-
         Android {
             bindings = <
 &kp TAB    &kp Q         &kp W         &kp E      &kp R  &kp T                            &kp Y      &kp U  &kp I      &kp O           &kp P               &kp MINUS
-&mo 3      &kp A         &kp S         &kp D      &kp F  &kp G                            &kp H      &kp J  &kp K      &kp L           &kp SEMI            &lt 6 ENTER
+&mo 1      &kp A         &kp S         &kp D      &kp F  &kp G                            &kp H      &kp J  &kp K      &kp L           &kp SEMI            &lt 6 ENTER
 &kp LSHFT  &kp Z         &kp X         &kp C      &kp V  &kp B                            &kp N      &kp M  &kp COMMA  &kp DOT         &kp FSLH            &kp RSHFT
            &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &mo 5  &mkp MB1  &kp CAPSLOCK    &mo 5  &kp SPACE                    &mt RCTRL LBKT  &mt RIGHT_GUI RBKT
             >;
@@ -134,6 +116,24 @@
 &trans  &kp HOME  &msc SCRL_UP    &kp DELETE  &kp RIGHT  &kp LG(TAB)                        &kp BACKSPACE           &kp F6              &kp F7                   &kp F9                  &kp LC(O)     &trans
 &trans  &trans    &msc SCRL_DOWN  &trans      &trans     &kp LEFT_ARROW                     &kp DOWN_ARROW          &kp LA(LEFT_ARROW)  &kp LA(RIGHT)            &kp LS(LA(DOWN_ARROW))  &trans        &trans
         &trans    &trans          &trans      &trans     &trans          &trans    &kp DEL  &trans                                                               &trans                  &trans
+            >;
+        };
+
+        MAC {
+            bindings = <
+&kp TAB    &kp Q      &kp W         &kp E     &kp R  &kp T                        &kp Y      &kp U  &kp I      &kp O                      &kp P                    &kp MINUS
+&mo 3      &kp A      &kp S         &kp D     &kp F  &kp G                        &kp H      &kp J  &kp K      &kp L                      &kp SEMICOLON            &lt 6 ENTER
+&kp LSHFT  &kp Z      &kp X         &kp C     &kp V  &kp B                        &kp N      &kp M  &kp COMMA  &kp DOT                    &kp FSLH                 &kp RSHFT
+           &kp LCTRL  &kp LEFT_ALT  &kp LCMD  &mo 5  &mkp MB1  &kp CAPS    &mo 5  &kp SPACE                    &mt LEFT_GUI LEFT_BRACKET  &mt RCTRL RIGHT_BRACKET
+            >;
+        };
+
+        MAC_CTRL {
+            bindings = <
+&trans  &trans     &trans          &kp LC(E)   &trans     &kp LG(LS(NUMBER_4))                               &kp LC(NUMBER_1)  &kp LC(NUMBER_2)    &kp LC(NUMBER_3)  &kp LS(LC(UP_ARROW))  &kp UP_ARROW       &kp LG(LS(NUMBER_5))
+&trans  &kp LC(A)  &msc SCRL_UP    &kp DELETE  &kp RIGHT  &kp LC(UP_ARROW)                                   &kp BACKSPACE     &kp LC(J)           &kp LC(K)         &kp LC(L)             &kp LC(SEMICOLON)  &trans
+&trans  &trans     &msc SCRL_DOWN  &trans      &trans     &kp LEFT_ARROW                                     &kp DOWN_ARROW    &kp LG(LEFT_ARROW)  &kp LG(RIGHT)     &kp LS(LC(DOWN))      &trans             &trans
+        &trans     &trans          &trans      &trans     &trans                &trans    &kp LG(BACKSPACE)  &trans                                                  &trans                &trans
             >;
         };
 
