@@ -160,7 +160,7 @@
 &bt BT_CLR  &kp LA(LC(NUMBER_1))        &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &kp LA(LC(NUMBER_5))                    &kp LA(LC(NUMBER_6))  &kp LA(LC(NUMBER_7))  &kp LA(LC(NUMBER_8))  &kp LA(LC(NUMBER_9))  &kp LA(LC(NUMBER_0))  &trans
 &trans      &trans                      &kp KP_NUMBER_4       &kp KP_NUMBER_5       &kp KP_NUMBER_6       &trans                                  &kp BACKSPACE         &mkp MB1              &mkp MB2              &trans                &trans                &trans
 &trans      &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1       &kp KP_NUMBER_2       &kp KP_NUMBER_3       &kp PERIOD                              &trans                &trans                &trans                &trans                &trans                &trans
-            &connect_mac                &connect_ipad         &connect_android      &connect_windows      &trans                &trans    &trans  &trans                                                            &trans                &trans
+            &connect_mac                &connect_android      &connect_windows      &mo 2                 &trans                &trans    &trans  &trans                                                            &trans                &trans
             >;
         };
     };
